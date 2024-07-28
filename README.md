@@ -39,7 +39,10 @@ AICLI100 is a command line interface for using AI.
    ```sh
    pip install aicli100
    ```
-
+2. Run the app:
+   ```sh
+   aicli100
+   ```
 
 ## Usage
 
