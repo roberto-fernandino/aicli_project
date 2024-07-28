@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "aicli100"
-version = "1.0.0"
+version = "1.0.5"
 authors = [
   { name="Roberto Fernandino", email="romfernandino@gmail.com", role="developer", github="roberto-fernandino"},
 ]
@@ -18,22 +18,35 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
+dependencies = [
+    "aiohttp",
+    "anyio",
+    "configparser",
+    "curses",
+    "distro",
+    "httpx",
+    "openai",
+    "requests",
+]
+
 [tool.hatch.version]
 source = "vcs"
-
-[tool.hatch.build.hooks.vcs]
-version-file = "src/aicli100/_version.py"
 
 [tool.hatch.build.targets.wheel.shared-data]
 "src/aicli100/post_install.py" = "share/aicli100/post_install.py"
 
 [project.scripts]
 aicli100-post-install = "aicli100.post_install:create_config"
+aicli100 = "aicli100.main:main"
 
 [tool.hatch.envs.default]
 dependencies = [
-  "configparser",
+   "configparser",
 ]
 
 [tool.hatch.envs.default.scripts]
 post-install = "python src/aicli100/post_install.py"
+
+
+[project.urls]
+Homepage = "https://github.com/roberto-fernandino/aicli_project"
