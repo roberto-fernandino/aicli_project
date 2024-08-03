@@ -1,8 +1,7 @@
 import subprocess
 import sys
 import time
-import curses
-
+from aicli100.post_install import create_config
 
 def install_ollama(stdscr):
     if sys.platform == "linux":
@@ -87,3 +86,7 @@ def check_ollama_installation(stdscr):
             stdscr.refresh()
             stdscr.getch()
             return False
+
+
+def create_config_file():
+    create_config()

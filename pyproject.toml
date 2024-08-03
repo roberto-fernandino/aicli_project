@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "aicli100"
-version = "1.0.5"
+version = "1.1.0"
 authors = [
   { name="Roberto Fernandino", email="romfernandino@gmail.com", role="developer", github="roberto-fernandino"},
 ]
@@ -22,7 +22,6 @@ dependencies = [
     "aiohttp",
     "anyio",
     "configparser",
-    "curses",
     "distro",
     "httpx",
     "openai",

@@ -59,13 +59,13 @@ def get_models_list() -> list:
             for model in data.get("models", []):
                 models_list.append({"name": model["name"], "origin": "ollama"})
 
-    if config.get("API_KEYS", "open_ai_api_key") is not None:
+    if config.get("API_KEYS", "open_ai_api_key") != "":
         open_ai_client = OpenAI(api_key=config.get("API_KEYS", "open_ai_api_key"))
         data = open_ai_client.models.list()
         for model in data.data:
             models_list.append({"name": model.id, "origin": "openai"})
-
-    if config.get("API_KEYS", "anthropic_api_key") is not None:
+    
+    if config.get("API_KEYS", "anthropic_api_key") != "":
         models_list.append({"name": "claude-3-opus-20240229", "origin": "anthropic"})
         models_list.append({"name": "claude-3-haiku-20240307", "origin": "anthropic"})
         models_list.append({"name": "claude-3-sonnet-20240229", "origin": "anthropic"})
