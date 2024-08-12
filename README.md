@@ -30,7 +30,7 @@ AICLI100 is a command line interface for using AI.
 
 4. Build the project:
    ```sh
-   python -m build
+   python src/main.py
    ```
 
 ### Using pip
